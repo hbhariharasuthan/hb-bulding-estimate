@@ -1,0 +1,28 @@
+# Core AI
+torch
+torchvision
+torchaudio
+
+# API
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+pydantic
+
+# Data
+pandas
+numpy
+
+# File upload
+python-multipart
+
+# Image processing
+opencv-python-headless
+
+# OCR
+pytesseract
+
+# CAD
+ezdxf
