@@ -1,8 +1,12 @@
 from fastapi import FastAPI
 
-from app.http import auth_router, plans_router
+from app.http import auth_custom_router, auth_router, plans_router
 
-app = FastAPI(title="Building Estimate API")
+app = FastAPI(
+    title="Building Estimate API",
+    description="API for building estimates with custom RBAC, JWT authentication, and MVC-style auth endpoint.",
+    version="1.0.0",
+)
 
 
 @app.get("/health")
@@ -16,4 +20,5 @@ def root():
 
 
 app.include_router(auth_router)
+app.include_router(auth_custom_router)
 app.include_router(plans_router)
