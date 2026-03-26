@@ -1,28 +1,62 @@
-# Core AI
+# -----------------------------
+# Core AI (PyTorch)
+# -----------------------------
 torch
 torchvision
 torchaudio
 
-# API
+# -----------------------------
+# API Layer
+# -----------------------------
 fastapi
 uvicorn[standard]
+fastapi-users[sqlalchemy]
+passlib[bcrypt]
+bcrypt<4
 
-# Database
+# -----------------------------
+# Database & ORM
+# -----------------------------
 sqlalchemy
+alembic
 pydantic
+asyncpg
 
-# Data
+# -----------------------------
+# Database Drivers (Choose one)
+# -----------------------------
+#pymysql        # MySQL
+psycopg2-binary  # PostgreSQL (uncomment if using Postgres)
+
+# -----------------------------
+# Data Processing
+# -----------------------------
 pandas
 numpy
 
-# File upload
+# -----------------------------
+# File Uploads
+# -----------------------------
 python-multipart
 
-# Image processing
+# -----------------------------
+# Image Processing
+# -----------------------------
 opencv-python-headless
+Pillow
 
+# -----------------------------
 # OCR
+# -----------------------------
 pytesseract
 
-# CAD
+# -----------------------------
+# CAD / Blueprint Parsing
+# -----------------------------
 ezdxf
+
+# -----------------------------
+# Optional (Recommended)
+# -----------------------------
+python-dotenv   # env variables
+loguru          # logging

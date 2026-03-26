@@ -2,6 +2,9 @@ services:
   backend:
     build: ./backend
     container_name: backend
+    environment:
+      DATABASE_URL: "postgresql+psycopg2://admin:admin123@db:5432/bme_db"
+      JWT_SECRET: "change-me-in-production"
     ports:
       - "8000:8000"
     depends_on:

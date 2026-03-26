@@ -30,6 +30,7 @@ backend/coverage.xml
 venv/
 ENV/
 env/
+.python-version
 
 # Flutter (extra at repo root; see also frontend/.gitignore)
 frontend/build/
@@ -46,7 +47,15 @@ logs/
 
 # Local Docker overrides (often contain machine-specific paths)
 docker-compose.override.yml
+.docker/
 
 # Local databases
 *.sqlite3
 *.db
+
+# Accidental nested project copy
+hb-bulding-estimate/
+
+# Local shell/env tooling
+.envrc
+.direnv/
