@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.http import auth_custom_router, auth_router, plans_router
+from app.http import auth_custom_router, auth_router, material_standards_router, plans_router
 
 app = FastAPI(
     title="Building Estimate API",
@@ -22,3 +22,4 @@ def root():
 app.include_router(auth_router)
 app.include_router(auth_custom_router)
 app.include_router(plans_router)
+app.include_router(material_standards_router)
