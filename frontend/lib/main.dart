@@ -10,6 +10,7 @@ import 'modules/masters/views/material_page.dart';
 import 'modules/masters/views/material_standards_page.dart';
 import 'modules/masters/views/property_page.dart';
 import 'modules/masters/views/units_page.dart';
+import 'modules/plans/views/plan_preprocess_page.dart';
 import 'modules/settings/providers/site_settings_provider.dart';
 import 'modules/settings/views/site_settings_page.dart';
 import 'routes/app_routes.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.property: (_) => const PropertyPage(),
         AppRoutes.units: (_) => const UnitsPage(),
         AppRoutes.materialStandards: (_) => const MaterialStandardsPage(),
+        AppRoutes.planPreprocess: (_) => const PlanPreprocessPage(),
         AppRoutes.siteSettings: (_) => const SiteSettingsPage(),
       },
     );

@@ -31,6 +31,20 @@ class HeaderMenu extends StatelessWidget {
           ),
         ),
         PopupMenuButton<String>(
+          tooltip: 'Plans',
+          onSelected: (value) => _go(context, value),
+          itemBuilder: (context) => const [
+            PopupMenuItem(
+              value: AppRoutes.planPreprocess,
+              child: Text('Upload & Preprocess'),
+            ),
+          ],
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: Text('PLANS'),
+          ),
+        ),
+        PopupMenuButton<String>(
           tooltip: 'Settings',
           onSelected: (value) => _go(context, value),
           itemBuilder: (context) => const [

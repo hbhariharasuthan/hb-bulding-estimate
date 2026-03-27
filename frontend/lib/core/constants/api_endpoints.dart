@@ -7,4 +7,7 @@ class ApiEndpoints {
 
   /// fastapi-users OAuth2 password flow (form body).
   static const String loginJwt = '/auth/jwt/login';
+
+  static const String plans = '/api/v1/plans';
+  static const String plansUpload = '/api/v1/plans/upload';
 }

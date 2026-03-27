@@ -7,5 +7,6 @@ class AppRoutes {
   static const String property = '/masters/property';
   static const String units = '/masters/units';
   static const String materialStandards = '/masters/material-standards';
+  static const String planPreprocess = '/plans/preprocess';
   static const String siteSettings = '/settings/site';
 }

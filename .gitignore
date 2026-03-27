@@ -106,3 +106,12 @@ node_modules/
 # *.pth
 # *.onnx
 # *.safetensors
+
+# Runtime-generated storage artifacts (uploads/processed outputs)
+backend/app/storage/app/public/uploads/
+backend/app/storage/app/public/processed/
+backend/app/storage/app/public/plans/
+
+# Python bytecode fallback patterns
+*.pyc
+*.pyo

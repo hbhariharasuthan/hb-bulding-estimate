@@ -15,7 +15,11 @@ services:
       - db
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        # Same origin as mapped port (8080:80) so /api/* is proxied by nginx to the backend.
+        API_BASE_URL: http://localhost:8080
     container_name: frontend
     ports:
       - "8080:80"

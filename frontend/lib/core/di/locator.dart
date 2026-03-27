@@ -8,9 +8,12 @@ import '../network/auth_token_ref.dart';
 import '../storage/token_storage.dart';
 import '../../modules/auth/repositories/auth_repository.dart';
 import '../../modules/masters/repositories/master_repository.dart';
+import '../../modules/plans/repositories/plan_repository.dart';
 import '../../modules/settings/repositories/site_settings_repository.dart';
 
 final getIt = GetIt.instance;
+
+PlanRepository getPlanRepository() => getIt<PlanRepository>();
 
 Future<void> setupLocator() async {
   final prefs = await SharedPreferences.getInstance();
@@ -65,5 +68,8 @@ Future<void> setupLocator() async {
   );
   getIt.registerLazySingleton<SiteSettingsRepository>(
     () => SiteSettingsRepository(dio: getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PlanRepository>(
+    () => PlanRepository(dio: getIt<Dio>()),
   );
 }

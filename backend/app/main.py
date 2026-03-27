@@ -12,6 +12,7 @@ from app.http import (
     config_router,
     material_standards_router,
     plans_router,
+    preprocessing_router,
     site_settings_router,
 )
 
@@ -88,6 +89,7 @@ def root():
 app.include_router(auth_router)
 app.include_router(auth_custom_router)
 app.include_router(plans_router)
+app.include_router(preprocessing_router)
 app.include_router(material_standards_router)
 app.include_router(config_router)
 app.include_router(site_settings_router)
