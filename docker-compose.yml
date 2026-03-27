@@ -5,6 +5,10 @@ services:
     environment:
       DATABASE_URL: "postgresql+psycopg2://admin:admin123@db:5432/bme_db"
       JWT_SECRET: "change-me-in-production"
+      # Dev: allow any origin (Bearer-only API). Set CORS_ALLOW_ALL=false in production.
+      CORS_ALLOW_ALL: "true"
+      # Used when CORS_ALLOW_ALL=false — list every dev origin (scheme+host+port).
+      CORS_ORIGINS: "http://localhost:8080,http://127.0.0.1:8080,http://localhost:8081,http://127.0.0.1:8081,http://localhost:5173,http://127.0.0.1:5173"
     ports:
       - "8000:8000"
     depends_on:

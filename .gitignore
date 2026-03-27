@@ -6,11 +6,17 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+!.env.*.example
+**/secrets/
+*.pem
+*.key
 
 # Python (backend)
 backend/__pycache__/
 backend/**/__pycache__/
-backend/*.py[cod]
+**/__pycache__/
+*.py[cod]
+*$py.class
 backend/*.egg-info/
 backend/.eggs/
 backend/dist/
@@ -24,6 +30,7 @@ backend/.coverage
 backend/.coverage.*
 backend/htmlcov/
 backend/coverage.xml
+backend/.tox/
 
 # Virtual environments (repo root or elsewhere)
 .venv/
@@ -32,8 +39,12 @@ ENV/
 env/
 .python-version
 
-# Flutter (extra at repo root; see also frontend/.gitignore)
+# Flutter / Dart (see also frontend/.gitignore)
 frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
 
 # Logs
 *.log
@@ -41,6 +52,8 @@ logs/
 
 # IDE / editors
 .idea/
+# Uncomment to ignore local VS Code settings (team often commits launch/tasks instead):
+# .vscode/
 *.code-workspace
 *.swp
 *~
@@ -59,3 +72,18 @@ hb-bulding-estimate/
 # Local shell/env tooling
 .envrc
 .direnv/
+
+# Test / coverage (root)
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# Node (if tooling is added at repo root)
+node_modules/
+
+# ML / large artifacts (uncomment if you store models in-repo)
+# *.pt
+# *.pth
+# *.onnx
+# *.safetensors

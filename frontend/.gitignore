@@ -4,6 +4,12 @@
 *.pyc
 *.swp
 .DS_Store
+
+# Local env (flutter_dotenv); tracked defaults stay in assets/env/defaults.env
+.env
+.env.local
+.env.*.local
+assets/env/.env
 .atom/
 .build/
 .buildlog/
