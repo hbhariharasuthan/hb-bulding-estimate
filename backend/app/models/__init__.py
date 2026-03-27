@@ -8,6 +8,7 @@ from .material_estimate import MaterialEstimate
 from .material_master import MaterialMaster
 from .material_standard import MaterialStandard
 from .property_master import PropertyMaster
+from .site_setting import SiteSetting
 from .unit_master import UnitMaster
 
 __all__ = [
@@ -22,5 +23,6 @@ __all__ = [
     "PropertyMaster",
     "UnitMaster",
     "MaterialStandard",
+    "SiteSetting",
 ]
 

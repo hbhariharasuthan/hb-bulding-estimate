@@ -6,14 +6,17 @@ from pydantic import BaseModel, Field
 class MasterItem(BaseModel):
     id: int
     name: str
+    is_active: bool
 
 
 class MasterCreateRequest(BaseModel):
     name: str = Field(min_length=1, max_length=80)
+    is_active: bool = True
 
 
 class MasterUpdateRequest(BaseModel):
     name: str = Field(min_length=1, max_length=80)
+    is_active: bool = True
 
 
 class MastersResponse(BaseModel):
@@ -28,12 +31,14 @@ class MaterialStandardCreateRequest(BaseModel):
     unit_id: int = Field(gt=0)
     value: float | None = None
     default: bool = True
+    is_active: bool = True
 
 
 class MaterialStandardUpdateRequest(BaseModel):
     unit_id: int | None = Field(default=None, gt=0)
     value: float | None = None
     default: bool | None = None
+    is_active: bool | None = None
 
 
 class MaterialStandardItem(BaseModel):
@@ -46,3 +51,4 @@ class MaterialStandardItem(BaseModel):
     unit_id: int
     unit_name: str
     default: bool
+    is_active: bool

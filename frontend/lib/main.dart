@@ -6,6 +6,12 @@ import 'core/config/app_config.dart';
 import 'core/di/locator.dart';
 import 'core/theme/app_theme.dart';
 import 'modules/auth/providers/auth_provider.dart';
+import 'modules/masters/views/material_page.dart';
+import 'modules/masters/views/material_standards_page.dart';
+import 'modules/masters/views/property_page.dart';
+import 'modules/masters/views/units_page.dart';
+import 'modules/settings/providers/site_settings_provider.dart';
+import 'modules/settings/views/site_settings_page.dart';
 import 'routes/app_routes.dart';
 import 'shared/widgets/auth_shell.dart';
 
@@ -20,10 +26,17 @@ Future<void> main() async {
     tokenRef: getIt(),
   );
   await authProvider.bootstrap();
+  final siteSettingsProvider = SiteSettingsProvider(repository: getIt());
+  await siteSettingsProvider.bootstrap();
 
   runApp(
-    ChangeNotifierProvider<AuthProvider>.value(
-      value: authProvider,
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AuthProvider>.value(value: authProvider),
+        ChangeNotifierProvider<SiteSettingsProvider>.value(
+          value: siteSettingsProvider,
+        ),
+      ],
       child: const MyApp(),
     ),
   );
@@ -42,6 +55,11 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.login: (_) => const AuthShell(),
         AppRoutes.dashboard: (_) => const AuthShell(),
+        AppRoutes.material: (_) => const MaterialMasterPage(),
+        AppRoutes.property: (_) => const PropertyPage(),
+        AppRoutes.units: (_) => const UnitsPage(),
+        AppRoutes.materialStandards: (_) => const MaterialStandardsPage(),
+        AppRoutes.siteSettings: (_) => const SiteSettingsPage(),
       },
     );
   }

@@ -19,51 +19,54 @@ class AppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     final year = DateTime.now().year.toString();
 
-    return Material(
-      color: Colors.white,
-      elevation: 0,
-      child: DecoratedBox(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          border: Border(
-            top: BorderSide(color: BrandColors.footerBorder, width: 1),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Color(0x0D000000),
-              offset: Offset(0, -1),
-              blurRadius: 2,
+    return SizedBox(
+      width: double.infinity,
+      child: Material(
+        color: Colors.white,
+        elevation: 0,
+        child: DecoratedBox(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            border: Border(
+              top: BorderSide(color: BrandColors.footerBorder, width: 1),
             ),
-          ],
-        ),
-        child: SafeArea(
-          top: false,
-          child: Padding(
-            padding: padding,
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              spacing: 16,
-              runSpacing: 8,
-              children: [
-                Image.asset(
-                  AppAssets.hbLogo,
-                  height: logoHeight,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) => Icon(
-                    Icons.business,
-                    size: logoHeight * 0.75,
-                    color: BrandColors.primaryCyan,
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x0D000000),
+                offset: Offset(0, -1),
+                blurRadius: 2,
+              ),
+            ],
+          ),
+          child: SafeArea(
+            top: false,
+            child: Padding(
+              padding: padding,
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 16,
+                runSpacing: 8,
+                children: [
+                  Image.asset(
+                    AppAssets.hbLogo,
+                    height: logoHeight,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) => Icon(
+                      Icons.business,
+                      size: logoHeight * 0.75,
+                      color: BrandColors.primaryCyan,
+                    ),
                   ),
-                ),
-                Text(
-                  '© $year ${AppConfig.siteDomain}. All rights reserved.',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: BrandColors.footerText,
+                  Text(
+                    '© $year ${AppConfig.siteDomain}. All rights reserved.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: BrandColors.footerText,
+                        ),
                       ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

@@ -1,7 +1,9 @@
 import os
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.core.openapi import openapi_generator
 from app.http import (
@@ -10,6 +12,7 @@ from app.http import (
     config_router,
     material_standards_router,
     plans_router,
+    site_settings_router,
 )
 
 app = FastAPI(
@@ -66,6 +69,11 @@ def _install_cors() -> None:
 
 _install_cors()
 
+# Laravel-style public storage namespace for uploaded assets.
+_storage_public_dir = Path(__file__).resolve().parents[1] / "storage" / "app" / "public"
+_storage_public_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/storage", StaticFiles(directory=str(_storage_public_dir)), name="storage")
+
 
 @app.get("/health")
 def health():
@@ -82,5 +90,6 @@ app.include_router(auth_custom_router)
 app.include_router(plans_router)
 app.include_router(material_standards_router)
 app.include_router(config_router)
+app.include_router(site_settings_router)
 
 app.openapi = openapi_generator(app)

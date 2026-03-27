@@ -7,6 +7,8 @@ import '../config/api_config.dart';
 import '../network/auth_token_ref.dart';
 import '../storage/token_storage.dart';
 import '../../modules/auth/repositories/auth_repository.dart';
+import '../../modules/masters/repositories/master_repository.dart';
+import '../../modules/settings/repositories/site_settings_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -57,5 +59,11 @@ Future<void> setupLocator() async {
 
   getIt.registerLazySingleton<AuthRepository>(
     () => AuthRepository(dio: getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<MasterRepository>(
+    () => MasterRepository(dio: getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<SiteSettingsRepository>(
+    () => SiteSettingsRepository(dio: getIt<Dio>()),
   );
 }

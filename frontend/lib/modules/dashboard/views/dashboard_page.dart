@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/config/app_config.dart';
-import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/brand_colors.dart';
 import '../../../shared/widgets/app_footer.dart';
+import '../../../shared/widgets/app_header.dart';
 import '../../auth/providers/auth_provider.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -15,39 +15,7 @@ class DashboardPage extends StatelessWidget {
     final auth = context.watch<AuthProvider>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              AppAssets.hbLogo,
-              height: 32,
-              fit: BoxFit.contain,
-              errorBuilder: (context, error, stackTrace) => const Icon(
-                Icons.business,
-                color: BrandColors.primaryCyan,
-                size: 28,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Text(
-              AppConfig.appName,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: BrandColors.primaryBlue,
-                    fontWeight: FontWeight.w600,
-                  ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: 'Sign out',
-            onPressed: () async {
-              await context.read<AuthProvider>().logout();
-            },
-          ),
-        ],
-      ),
+      appBar: const AppHeader(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

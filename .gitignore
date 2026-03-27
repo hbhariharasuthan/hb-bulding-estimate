@@ -46,6 +46,25 @@ frontend/.flutter-plugins
 frontend/.flutter-plugins-dependencies
 frontend/.packages
 
+# Reference theme workspace (keep source assets/code, ignore generated platform/build output)
+frontend/theme_ref/**/build/
+frontend/theme_ref/**/.dart_tool/
+frontend/theme_ref/**/.packages
+frontend/theme_ref/**/.flutter-plugins
+frontend/theme_ref/**/.flutter-plugins-dependencies
+frontend/theme_ref/**/.metadata
+frontend/theme_ref/**/.idea/
+frontend/theme_ref/**/.vscode/
+frontend/theme_ref/**/ios/Pods/
+frontend/theme_ref/**/ios/Flutter/ephemeral/
+frontend/theme_ref/**/macos/Flutter/ephemeral/
+frontend/theme_ref/**/linux/flutter/ephemeral/
+frontend/theme_ref/**/windows/flutter/ephemeral/
+frontend/theme_ref/**/android/.gradle/
+frontend/theme_ref/**/android/app/build/
+# Temporary imported reference app workspace (keep project root clean)
+frontend/theme_ref/
+
 # Logs
 *.log
 logs/

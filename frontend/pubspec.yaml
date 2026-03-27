@@ -66,6 +66,20 @@ flutter:
   assets:
     - assets/branding/hb_logo.png
     - assets/env/defaults.env
+    - theme_ref/hbbe-theme/assets/Backgrounds/Spline.png
+    - theme_ref/hbbe-theme/assets/RiveAssets/
+    - theme_ref/hbbe-theme/assets/icons/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: theme_ref/hbbe-theme/assets/Fonts/Inter-Regular.ttf
+        - asset: theme_ref/hbbe-theme/assets/Fonts/Inter-SemiBold.ttf
+          weight: 600
+    - family: Poppins
+      fonts:
+        - asset: theme_ref/hbbe-theme/assets/Fonts/Poppins-Bold.ttf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

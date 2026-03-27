@@ -4,6 +4,7 @@ from app.http.routers import (
     config_router,
     material_standards_router,
     plans_router,
+    site_settings_router,
 )
 
 __all__ = [
@@ -12,5 +13,6 @@ __all__ = [
     "plans_router",
     "material_standards_router",
     "config_router",
+    "site_settings_router",
 ]
 

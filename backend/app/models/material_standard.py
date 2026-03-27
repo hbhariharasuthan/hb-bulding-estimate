@@ -21,6 +21,9 @@ class MaterialStandard(Base):
     default: Mapped[bool] = mapped_column(
         Boolean, nullable=False, server_default="false"
     )
+    is_active: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, server_default="true"
+    )
 
     material = relationship("MaterialMaster", back_populates="standards")
     property = relationship("PropertyMaster", back_populates="standards")
